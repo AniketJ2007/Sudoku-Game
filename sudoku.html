@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(52, 158, 197);
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+
+        }
+
+        table {
+            table-layout: fixed;
+            border-collapse: collapse;
+            border: 2px solid black;
+            box-sizing: border-box;
+
+        }
+
+        div[contenteditable] {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+            font-size: x-large;
+        }
+
+        th,
+        td {
+            border-left: 2px solid black;
+            border-top: 2px solid black;
+            text-align: center;
+            font-size: large;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+        }
+
+        tr {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .algin {
+            display: flex;
+            justify-content: center;
+        }
+
+        .valgin {
+            display: block;
+            margin-top: 20%;
+            margin-bottom: 20%;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #over {
+            font-size: 25px;
+        }
+
+        button {
+            width: 110px;
+            height: 40px;
+            text-align: center;
+            font-size: large;
+            margin-left: 25px;
+        }
+
+        .col_change {
+            background-color: rgba(68, 209, 209, 0.559);
+        }
+
+        .hint_col {
+            background-color: red;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+<h1>Welcome to Sudoku</h1>
+
+<body>
+    <div class="valgin">
+        <div class="algin">
+            <table class="gap">
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="00" class="cell"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="01" class="cell"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="02" class="cell"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="03" class="cell"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="04" class="cell"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="05" class="cell"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="06" class="cell"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="07"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="08" class="cell"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="10"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="11" value=""></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="12"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="13"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="14"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="15"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="16"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="17"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="18"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="20"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="21"></div>
+                    </th>
+                    <th style="border-right: 4px solid black;border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="22"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="23"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="24"></div>
+                    </th>
+                    <th style="border-right: 4px solid black;border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="25"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="26"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="27"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="28"></div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="30"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="31"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="32"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="33"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="34"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="35"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="36"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="37"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" type="text" id="38"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="40"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="41"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="42"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="43"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="44"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="45"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="46"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="47"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="48"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="50"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="51"></div>
+                    </th>
+                    <th style="border-right: 4px solid black;border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="52"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="53"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="54"></div>
+                    </th>
+                    <th style="border-right: 4px solid black;border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="55"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="56"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="57"></div>
+                    </th>
+                    <th style="border-bottom: 4px solid black;">
+                        <div contenteditable="true" id="58"></div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="60"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="61"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="62"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="63"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="64"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="65"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="66"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="67"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="68"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="70"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="71"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="72"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="73"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="74"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="75"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="76"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="77"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="78"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable="true" id="80"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="81"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="82"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="83"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="84"></div>
+                    </td>
+                    <th style="border-right: 4px solid black;">
+                        <div contenteditable="true" id="85"></div>
+                    </th>
+                    <td>
+                        <div contenteditable="true" id="86"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="87"></div>
+                    </td>
+                    <td>
+                        <div contenteditable="true" id="88"></div>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+        <br>
+        <p id="msg" style="text-align: center;font-size:xx-large;"> </p> <br>
+        <div class="algin"><button id="clear"> Undo</button> <button id="submit">Submit</button>
+            <button id="hint"> Hint </button>
+        </div>
+
+    </div>
+    <script src="sudoku.js"></script>
+</body>
+
+</html>
